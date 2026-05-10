@@ -1,0 +1,45 @@
+name: Automated Preprocessing Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'creditcard_raw/**'
+      - 'preprocessing/automate_NamaSiswa.py'
+  workflow_dispatch:   # bisa trigger manual dari GitHub UI
+
+jobs:
+  preprocessing:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout repo ──────────────────────────────────
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # ── 2. Setup Python ───────────────────────────────────
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      # ── 3. Install dependencies ───────────────────────────
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r preprocessing/requirements.txt
+
+      # ── 4. Jalankan script preprocessing ──────────────────
+      - name: Run Preprocessing Pipeline
+        run: |
+          python preprocessing/automate_NamaSiswa.py
+
+      # ── 5. Upload hasil ke repo (commit & push) ────────────
+      - name: Commit & Push Preprocessed Data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name  "github-actions[bot]"
+          git add preprocessing/creditcard_preprocessing/
+          git diff --staged --quiet || git commit -m "chore: update preprocessed dataset [skip ci]"
+          git push
