@@ -1,4 +1,4 @@
-# Eksperimen_SML_Siswa
+# Eksperimen_SML_AryaChoirulFikri
 ## Credit Card Fraud Detection — MLOps Pipeline
 
 > Submission Proyek Akhir: Membangun Sistem Machine Learning  
@@ -9,12 +9,12 @@
 ## 📁 Struktur Repository
 
 ```
-Eksperimen_SML_Siswa/
+Eksperimen_SML_AryaChoirulFikri/
 ├── .github/
 │   └── workflows/
 │       └── preprocessing.yml       ← GitHub Actions auto-preprocessing
 ├── creditcard_raw/
-│   └── creditcard.csv              ← Dataset mentah (download dari Kaggle)
+│   └── creditcard.csv              ← Dataset mentah 
 └── preprocessing/
     ├── Eksperimen_Siswa.ipynb      ← Notebook EDA & preprocessing manual
     ├── automate_Siswa.py           ← Script preprocessing otomatis
@@ -34,12 +34,12 @@ pip install pandas numpy scikit-learn imbalanced-learn
 ```
 
 ### 2. Jalankan preprocessing manual (Jupyter)
-Buka dan jalankan `preprocessing/Eksperimen_Siswa.ipynb`
+Buka dan jalankan `preprocessing/Eksperimen_AryaChoirulFikri.ipynb`
 
 ### 3. Jalankan preprocessing otomatis
 ```bash
 cd preprocessing
-python automate_Siswa.py
+python automate_AryaChoirulFikri.py
 ```
 
 ---
@@ -47,6 +47,6 @@ python automate_Siswa.py
 ## ⚙️ GitHub Actions
 Workflow otomatis akan berjalan setiap kali ada push ke:
 - `creditcard_raw/**`
-- `preprocessing/automate_Siswa.py`
+- `preprocessing/automate_AryaChoirulFikri.py`
 
 Atau bisa di-trigger manual dari tab **Actions** di GitHub.
