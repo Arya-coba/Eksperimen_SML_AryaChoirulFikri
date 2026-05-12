@@ -1,14 +1,3 @@
-"""
-modelling.py
-============
-Training baseline Credit Card Fraud Detection.
-MLflow 2.19.0 compatible — menggunakan autolog sklearn.
-
-Cara menjalankan:
-    1. Buka terminal 1 → jalankan: mlflow ui
-    2. Buka terminal 2 → jalankan: python modelling.py
-"""
-
 import os
 import pickle
 import pandas as pd
