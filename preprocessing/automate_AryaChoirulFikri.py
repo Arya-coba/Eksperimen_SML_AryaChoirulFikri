@@ -1,19 +1,3 @@
-"""
-automate_Siswa.py
-=================
-Pipeline otomatisasi preprocessing untuk Credit Card Fraud Detection Dataset.
-
-Cara menjalankan (dari folder preprocessing/):
-    python automate_Siswa.py
-
-Output yang dihasilkan:
-    preprocessing/creditcard_preprocessing/train.csv
-    preprocessing/creditcard_preprocessing/test.csv
-    preprocessing/creditcard_preprocessing/creditcard_preprocessed.csv
-
-Dataset: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-"""
-
 import os
 import pandas as pd
 import numpy as np
