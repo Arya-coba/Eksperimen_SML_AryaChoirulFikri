@@ -1,18 +1,3 @@
-"""
-modelling_tuning.py (FAST VERSION)
-===================================
-Training dengan hyperparameter tuning + manual logging + DagsHub.
-Optimasi kecepatan:
-  - Subsample data untuk tuning (50K baris)
-  - RandomizedSearchCV (lebih cepat dari GridSearchCV)
-  - Train final model dengan full data
-
-Estimasi waktu: ~5-8 menit total
-
-Cara menjalankan (dari folder Membangun_model/):
-    python modelling_tuning.py
-"""
-
 import os
 import pickle
 import json
